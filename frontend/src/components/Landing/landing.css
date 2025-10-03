@@ -1,0 +1,211 @@
+/* General Layout */
+
+.landing-container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0fdf4, #ffffff, #dcfce7);
+  color: #111827;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #16a34a; /* green */
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  width: auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: #16a34a; /* green */
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #15803d; /* darker green */
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #16a34a;
+  color: #16a34a;
+}
+
+.btn-outline:hover {
+  background: #16a34a;
+  color: white;
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-text h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #166534;
+  margin-bottom: 16px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 24px;
+  max-width: 500px;
+}
+
+.hero-btn {
+  font-size: 16px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 600px;
+}
+
+/* ✅ Responsive adjustment for smaller screens */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text p {
+    font-size: 15px;
+    max-width: 90%;
+  }
+
+  .hero-btn {
+    margin-top: 10px;
+  }
+}
+
+
+/* Features Section */
+.features {
+  padding: 60px 40px;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 32px;
+  color: #166534;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #16a34a;
+  color: white;
+  margin-top: auto;
+}
+
+
+/* remove link styling*/
+a {
+  text-decoration: none;   /* removes underline globally */
+}
+
+a:visited {
+  text-decoration: none;   /* no underline after visiting */
+}
+
+a:active,
+a:hover {
+  text-decoration: none;   /* no underline on hover */
+}
