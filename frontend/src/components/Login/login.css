@@ -4,14 +4,14 @@
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(135deg, #f0fdf4, #ffffff, #dcfce7);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .login-card {
-  background: white;
+  background: #ffffff;
   padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 380px;
   text-align: center;
@@ -21,6 +21,10 @@
   margin-bottom: 24px;
   color: #166534;
   font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .form-group {
@@ -43,14 +47,14 @@
   border: 2px solid #d1d5db;
   border-radius: 8px;
   font-size: 14px;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #16a34a; /* green */
-  box-shadow: 0 0 6px rgba(22, 163, 74, 0.3);
+  border-color: #16a34a;
+  box-shadow: 0 0 8px rgba(22, 163, 74, 0.3);
 }
 
 .btn {
@@ -66,7 +70,7 @@
 .btn-primary {
   background: #16a34a;
   border: none;
-  color: white;
+  color: #ffffff;
 }
 
 .btn-primary:hover {
@@ -87,4 +91,11 @@
 
 .signup-text a:hover {
   text-decoration: underline;
+}
+
+.error_msg {
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 4px;
+  font-weight: 500;
 }

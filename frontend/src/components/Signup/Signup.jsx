@@ -1,33 +1,32 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./signup.css";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
+
+
 
 export default function SignupPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    otp: "",
     password: "",
     c_password: "",
   });
 
   const [errors, setErrors] = useState({
     email: "",
-    otp: "",
     password: "",
     c_password: "",
   });
+
+  const navigate=useNavigate();
 
   // ***********************validation functions**********************
   const validateEmail = (email) => {
     const regex = /^[1-9][0-9]{8}@nitkkr\.ac\.in$/;
     return regex.test(email) ? "" : "Please enter correct college email";
   };
-
-  const validateOTP=(otp)=>{
-    const regex=/^[0-9]{6}$/;
-    return regex.test(otp) ? "" : "Please enter a valid OTP";
-  }
 
   const validatePassword = (password) => {
     const regex = /^(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/;
@@ -53,9 +52,6 @@ export default function SignupPage() {
     if (name === "email") {
       setErrors({ ...errors, email: validateEmail(value.trim().toLowerCase()) });
     }
-    if(name=="otp"){
-      setErrors({...errors, otp: validateOTP(value)});
-    }
     if (name === "password") {
       setErrors({
         ...errors,
@@ -71,38 +67,32 @@ export default function SignupPage() {
     }
   };
 
-  // ******************generate OTP for email validation********************
-  const handleGetOTP=(e)=>{
-    e.preventDefault();
-    const emailErr = validateEmail(formData.email);
-    if(emailErr){
-      setErrors({...errors, email: emailErr});
-      return;
-    }
-
-    //api call to send OTP to email
-  }
-
   // *******************Submit handler******************
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Final validation before submit
     const emailErr = validateEmail(formData.email);
-    const otpErr = validateOTP(formData.otp);
     const passErr = validatePassword(formData.password);
     const cPassErr = validateConfirmPassword(
       formData.password,
       formData.c_password
     );
 
-    if (emailErr || otpErr || passErr || cPassErr) {
-      setErrors({ email: emailErr, otp: otpErr, password: passErr, c_password: cPassErr });
+    if (emailErr || passErr || cPassErr) {
+      setErrors({ email: emailErr, password: passErr, c_password: cPassErr });
       return;
     }
 
-    console.log("Signup Data:", formData);
-    // 👉 Later: send to backend API
+    try{
+      console.log("Signup Data:", formData);
+      //$$Later: send to backend API
+      navigate('/otp-validation',{state:{email:formData.email}});
+    }catch(err){
+      //$$ handle error appropriately
+      console.error("Signup error:", err);
+      toast.error("Signup failed. Please try again.");
+    }
   };
 
   return (
@@ -137,21 +127,6 @@ export default function SignupPage() {
               required
             />
             {errors.email && <div className="error_msg">{errors.email}</div>}
-          </div>
-
-          <div className="form-group">
-            <div className="otp-group">
-              <input 
-              className="otp-input"
-              type="otp" 
-              name="otp"
-              placeholder="Enter OTP"
-              value={formData.otp}
-              onChange={handleChange}
-              required/>
-              <button className="btn-otp" onClick={handleGetOTP}>Validate Email</button>
-            </div>
-            {errors.otp && <div className="error_msg">{errors.otp}</div>}
           </div>
 
           {/* Password */}
