@@ -11,7 +11,8 @@ import {Toaster} from 'react-hot-toast'
 import HomeProtectionAccountant from './components/HomeProtection/HomeProtectionAccountant'
 import HomeProtectionStudent from './components/HomeProtection/HomeProtectionStudent'
 import HomeAccountant from './components/Home/HomeAccountant'
-import HomeStudent from './components/Home/HomeStudent'
+import StudentHomePage from './components/Home/StudentHomePage'
+import PurchaseExtras from './components/PurchaseExtras/PurchaseExtras'
 
 function App() {
 
@@ -22,16 +23,19 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Signup />} />
         <Route path='/otp-validation' element={<OTPValidation />} />
-        <Route path='/student-dashboard' element={
-          <HomeProtectionStudent>
-            <HomeStudent />
-          </HomeProtectionStudent>
+        <Route path='/st-home' element={
+          
+            <StudentHomePage />
+          
         }/>
-        <Route path='/accountant-dashboard' element={
-          <HomeProtectionAccountant>
+        <Route path='/acc-home' element={
+          
             <HomeAccountant />
-          </HomeProtectionAccountant>
+          
         }/>
+        <Route path='/purchase' element={
+          <PurchaseExtras />
+        }></Route>
       </Routes>
       <Toaster />
     </>

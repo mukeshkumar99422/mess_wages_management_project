@@ -1,0 +1,312 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+.student-home-container {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #e9f8f3, #ffffff, #dcfce7, #e0f2fe);
+  background-size: 300% 300%;
+  animation: bgMove 10s infinite alternate;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Header */
+.student-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInDown 1s ease-out;
+}
+
+.student-header h1 {
+  color: #14532d;
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #16a34a, #22c55e, #15803d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.student-header p {
+  color: #4b5563;
+  font-size: 17px;
+}
+
+/* Date Picker (same as home) */
+.date-picker {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-picker label {
+  font-weight: 600;
+  color: #065f46;
+}
+
+.date-picker input {
+  padding: 8px 10px;
+  border: 2px solid #16a34a;
+  border-radius: 8px;
+  background: #f0fdf4;
+  font-weight: 500;
+  color: #065f46;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.date-picker input:hover {
+  background: #dcfce7;
+  transform: scale(1.03);
+}
+
+/* Cards Grid (same scaling as home) */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Cards */
+.menu-card {
+  background: linear-gradient(160deg, #ffffff, #e6fce9, #f0fdf4);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(22, 163, 74, 0.15);
+  padding: 30px;
+  text-align: center;
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(22, 163, 74, 0.3);
+}
+
+/* Icons */
+.menu-icon {
+  font-size: 45px;
+  margin-bottom: 10px;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.menu-icon.orange { color: #fb923c; text-shadow: 0 0 10px rgba(251,146,60,0.6); }
+.menu-icon.green { color: #16a34a; text-shadow: 0 0 10px rgba(22,163,74,0.6); }
+.menu-icon.teal { color: #14b8a6; text-shadow: 0 0 10px rgba(20,184,166,0.6); }
+
+.menu-card h2 {
+  color: #14532d;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* Extras List */
+.diet-section {
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 6px rgba(16,185,129,0.1);
+  transition: all 0.3s ease;
+}
+
+.diet-section:hover {
+  background: #ecfdf5;
+}
+
+.diet-section h3 {
+  font-size: 1rem;
+  color: #166534;
+  border-bottom: 2px solid #22c55e;
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+}
+
+/* Item List */
+.diet-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.diet-section li {
+  background: #e8fff1;
+  border: 1px solid #fff9e2;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+  color: #78350f;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(22,163,74,0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.diet-section li:hover {
+  transform: translateY(-6px);
+  background: #fff9e2;
+  box-shadow: 0 4px 10px rgba(22,163,74,0.25);
+}
+
+.diet-section .item-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.diet-section .item-price{
+    font-weight: 600;
+    font-size: smaller;
+    color: rgb(0, 127, 0);
+    display: block;
+    margin-left: 0;
+}
+
+/* Quantity Controls */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity-controls button {
+  background: #16a34a;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quantity-controls button:hover {
+  background: #15803d;
+  transform: scale(1.1);
+}
+
+.quantity-controls button:disabled {
+  background: #a7f3d0;
+  cursor: not-allowed;
+}
+
+.qty {
+  font-weight: 600;
+  color: #065f46;
+}
+
+/* Summary */
+.extras-summary {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.update-btn {
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.update-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(22, 163, 74, 0.4);
+}
+
+/* Confirm Modal */
+.confirm-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+  z-index: 1000;
+}
+
+.confirm-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 6px 25px rgba(16,185,129,0.25);
+}
+
+.confirm-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.yes-btn, .no-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.yes-btn {
+  background: #16a34a;
+  color: white;
+}
+
+.no-btn {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.yes-btn:hover {
+  background: #15803d;
+}
+
+.no-btn:hover {
+  background: #e5e7eb;
+}
+
+/* Animations */
+@keyframes bgMove {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 700px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  .student-header h1 {
+    font-size: 28px;
+  }
+}
