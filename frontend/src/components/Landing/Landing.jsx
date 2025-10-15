@@ -1,16 +1,15 @@
 import "./landing.css";
 import heroImg from '../../assets/heroImg.png';
 import { Link } from "react-router-dom";
+import logo from '../../../public/logo2.png'
 
 
 export default function LandingPage() {
   return (
     <div className="landing-container">
       {/* Navbar */}
-      <nav className="navbar">
-        <div className="logo">
-          <i className="fas fa-utensils"></i> Diet Manager
-        </div>
+      <nav className="navbar-landing">
+          <img src={logo} alt="Hostel Mess Logo" className="logo-img" />
         <div className="nav-buttons">
             <Link to="/login">
           <button className="btn btn-outline" >
@@ -33,7 +32,7 @@ export default function LandingPage() {
             A modern web app for students to check menus, track extra items, and
             analyze expenses — while accountants can easily manage daily updates.
           </p>
-          <button className="btn btn-primary hero-btn">
+          <button className="btn-primary hero-btn">
             <i className="fas fa-rocket"></i> Get Started
           </button>
         </div>

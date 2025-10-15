@@ -62,9 +62,9 @@ export default function Login() {
 
       // Redirect user based on role
       if (formData.role === "student") {
-        navigate("/student-dashboard");
+        navigate("/student/home");
       } else {
-        navigate("/accountant-dashboard");
+        navigate("/accountant/home");
       }
     } catch (err) {
       console.error("Login error:", err);

@@ -10,9 +10,9 @@ import {Toaster} from 'react-hot-toast'
 
 import HomeProtectionAccountant from './components/HomeProtection/HomeProtectionAccountant'
 import HomeProtectionStudent from './components/HomeProtection/HomeProtectionStudent'
-import HomeAccountant from './components/Home/HomeAccountant'
 import StudentHomePage from './components/Home/StudentHomePage'
 import PurchaseExtras from './components/PurchaseExtras/PurchaseExtras'
+import Dashboard from './components/Dashboard/Dashboard'
 
 function App() {
 
@@ -23,18 +23,16 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Signup />} />
         <Route path='/otp-validation' element={<OTPValidation />} />
-        <Route path='/st-home' element={
+        <Route path='/student/home' element={
           
             <StudentHomePage />
           
         }/>
-        <Route path='/acc-home' element={
-          
-            <HomeAccountant />
-          
-        }/>
         <Route path='/purchase' element={
           <PurchaseExtras />
+        }></Route>
+        <Route path='/dashboard' element={
+          <Dashboard />
         }></Route>
       </Routes>
       <Toaster />

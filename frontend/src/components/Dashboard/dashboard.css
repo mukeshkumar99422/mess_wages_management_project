@@ -1,0 +1,247 @@
+.dashboard-container {
+ min-height: 100vh;
+  background: linear-gradient(120deg, #e9f8f3, #ffffff, #dcfce7, #e0f2fe);
+  background-size: 300% 300%;
+  animation: bgMove 10s infinite alternate;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+    padding: 40px 20px;
+
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInDown 1s ease-out;
+}
+
+.dashboard-header h1 {
+  color: #14532d;
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #16a34a, #22c55e, #15803d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dashboard-header i {
+  margin-right: 8px;
+}
+
+.dashboard-header p {
+  color: #4b5563;
+  font-size: 17px;
+  
+}
+
+.dashboard-section {
+  margin: 45px 0;
+  padding: 25px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 30px rgba(22, 163, 74, 0.15);
+  transition: all 0.3s ease;
+}
+
+.section-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(22, 163, 74, 0.2); /* ✅ added subtle separator */
+}
+
+.section-header h2 {
+  color: #16a34a;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.section-header i {
+  margin-right: 8px;
+}
+
+.date-range {
+  display: flex;
+  gap: 25px;
+}
+
+.date-range label {
+  margin-right: 8px;
+  font-weight: 500;
+  color: #14532d;
+}
+
+input[type="date"] {
+  padding: 7px 10px;
+  border: 1px solid #16a34a;
+  border-radius: 8px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.85);
+  transition: all 0.25s ease;
+}
+
+input[type="date"]:hover {
+  border-color: #22c55e;
+}
+
+.analysis-content {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.summary-card {
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.price {
+  font-size: 1.9rem;
+  font-weight: bold;
+  color: #16a34a;
+}
+
+.fav-item {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #16a34a;
+}
+
+.chart-card {
+  flex: 2;
+  min-width: 320px;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 18px rgba(22, 163, 74, 0.15);
+  transition: all 0.3s ease;
+}
+
+.glass:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(22, 163, 74, 0.25);
+}
+
+/* =============================== */
+/*    TREND SECTION IMPROVEMENTS   */
+/* =============================== */
+
+.trend-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.trend-header-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+/* Keeps buttons pinned visually below date selection */
+.fixed-below {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.trend-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.trend-btn {
+  border: none;
+  background: rgba(187, 247, 208, 0.8);
+  padding: 8px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #14532d;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.trend-btn.active,
+.trend-btn:hover {
+  background: #16a34a;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.large {
+  margin-top: 15px;
+}
+
+/* =============================== */
+/*           RESPONSIVE            */
+/* =============================== */
+
+@media (max-width: 1024px) {
+  .dashboard-container {
+    padding: 25px 30px;
+  }
+
+  .date-range {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .fixed-below {
+    justify-content: flex-start;
+  }
+
+  .analysis-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .trend-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .fixed-below {
+    justify-content: flex-start;
+  }
+
+  .trend-btn {
+    padding: 7px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .dashboard-section {
+    padding: 20px;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+}
