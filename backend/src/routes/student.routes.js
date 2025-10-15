@@ -10,5 +10,4 @@ studentRouter.route('/login').post(loginStudent)
 studentRouter.route('/logout').post(verifyJWT, logoutStudent)
 studentRouter.route('/refresh-token').post(refreshAccessToken)
 
-
 export {studentRouter}
