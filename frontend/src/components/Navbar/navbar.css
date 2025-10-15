@@ -1,0 +1,216 @@
+.navbar {
+  width: 100%;
+  background: linear-gradient(90deg, #16a34a, #22c55e, #15803d);
+  color: white;
+  padding: 17px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+/* Main container */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Right section (profile) */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  position: relative;
+}
+
+/* Logo */
+.navbar-logo {
+  height: 0px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s ease;
+}
+.navbar-logo img{
+  height: 50px;
+  width: 70px;
+  margin:0px;
+  object-fit: contain;
+  display: block;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  font-size: 1rem;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Profile icon */
+.profile-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Profile dropdown */
+.profile-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: #f0fdf4;
+  color: #065f46;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(22, 163, 74, 0.2);
+  animation: fadeIn 0.3s ease;
+  overflow: hidden;
+}
+
+.profile-dropdown button {
+  background: none;
+  border: none;
+  padding: 12px 18px;
+  width: 100%;
+  text-align: left;
+  color: #065f46;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-dropdown button:hover {
+  background: #dcfce7;
+}
+
+/* Mobile menu icon */
+.menu-icon {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* Responsive view */
+@media (max-width: 900px) {
+  .navbar-container {
+    flex-wrap: wrap;
+  }
+
+  /* Hide desktop profile icon on mobile */
+  .navbar-right {
+    display: none;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #16a34a;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  /* Mobile profile (logout button in dropdown) */
+  .mobile-profile {
+    display: block;
+  }
+
+  .mobile-profile button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .mobile-profile button:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Desktop only */
+@media (min-width: 901px) {
+  .mobile-profile {
+    display: none;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

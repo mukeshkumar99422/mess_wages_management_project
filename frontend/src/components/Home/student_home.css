@@ -1,0 +1,258 @@
+.student-home-container {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #e9f8f3, #ffffff, #dcfce7, #e0f2fe);
+  background-size: 300% 300%;
+  animation: bgMove 10s infinite alternate;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Header */
+.student-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInDown 1s ease-out;
+}
+
+.student-header h1 {
+  color: #14532d;
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #16a34a, #22c55e, #15803d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.student-header p {
+  color: #4b5563;
+  font-size: 17px;
+}
+
+/* Date Picker */
+.date-picker {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-picker label {
+  font-weight: 600;
+  color: #065f46;
+}
+
+.date-picker input {
+  padding: 8px 10px;
+  border: 2px solid #16a34a;
+  border-radius: 8px;
+  background: #f0fdf4;
+  font-weight: 500;
+  color: #065f46;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.date-picker input:hover {
+  background: #dcfce7;
+  transform: scale(1.03);
+}
+
+/* Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Cards */
+.menu-card {
+  background: linear-gradient(160deg, #ffffff, #e6fce9, #f0fdf4);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(22, 163, 74, 0.15);
+  padding: 30px;
+  text-align: center;
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(22, 163, 74, 0.3);
+}
+
+/* Floating glowing icon */
+.menu-icon {
+  font-size: 45px;
+  margin-bottom: 10px;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.menu-icon.orange { color: #fb923c; text-shadow: 0 0 10px rgba(251,146,60,0.6); }
+.menu-icon.green { color: #16a34a; text-shadow: 0 0 10px rgba(22,163,74,0.6); }
+.menu-icon.teal { color: #14b8a6; text-shadow: 0 0 10px rgba(20,184,166,0.6); }
+
+.menu-card h2 {
+  color: #14532d;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* Sections side-by-side */
+.menu-sections {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.diet-section, .extra-section {
+  flex: 1;
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 6px rgba(16,185,129,0.1);
+  transition: all 0.3s ease;
+}
+
+.diet-section:hover, .extra-section:hover {
+  background: #ecfdf5;
+}
+
+.menu-sections h3 {
+  font-size: 1rem;
+  color: #166534;
+  border-bottom: 2px solid #22c55e;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+}
+
+/* Items */
+.menu-sections ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-sections li {
+  background: #e8fff1;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+  color: #064e3b;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(22,163,74,0.1);
+  transition: all 0.3s ease;
+}
+
+.menu-sections li:hover {
+  transform: translateY(-6px);
+  background: #d1fae5;
+  box-shadow: 0 4px 10px rgba(22,163,74,0.25);
+}
+
+/* Extra items have yellowish tone */
+.extra-section li {
+  background: #e8fff1;
+  border: 1px solid #fff9e2;
+  color: #78350f;
+}
+
+.extra-section li:hover {
+  background: #fff9e2;
+  transform: translateY(-6px);
+}
+
+/* Animations */
+@keyframes bgMove {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 700px) {
+  .menu-sections {
+    flex-direction: column;
+  }
+  .student-header h1 {
+    font-size: 28px;
+  }
+}
+/* Date selector */
+.date-selector {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.date-selector label {
+  color: #166534;
+  font-weight: 600;
+}
+
+.date-selector input {
+  padding: 6px 10px;
+  border: 2px solid #16a34a;
+  border-radius: 8px;
+  background: #f0fdf4;
+  color: #064e3b;
+  font-weight: 500;
+}
+
+/* Menu not updated section */
+.not-updated {
+  text-align: center;
+  padding: 20px 0;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.placeholder-img {
+  width: 100%;
+  height: 140px;
+  opacity: 0.9;
+}
+.placeholder-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+/* Menu sections side-by-side */
+.menu-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.items-section,
+.extras-section {
+  flex: 1;
+}
+
+.items-section h3,
+.extras-section h4 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
