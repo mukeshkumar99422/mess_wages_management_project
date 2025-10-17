@@ -13,6 +13,7 @@ import HomeProtectionStudent from './components/HomeProtection/HomeProtectionStu
 import StudentHomePage from './components/Home/StudentHomePage'
 import PurchaseExtras from './components/PurchaseExtras/PurchaseExtras'
 import Dashboard from './components/Dashboard/Dashboard'
+import AccountantHome from './components/Home/AccountantHome'
 
 function App() {
 
@@ -24,10 +25,11 @@ function App() {
         <Route path='/register' element={<Signup />} />
         <Route path='/otp-validation' element={<OTPValidation />} />
         <Route path='/student/home' element={
-          
             <StudentHomePage />
-          
         }/>
+        <Route path='/accountant/home' element={
+          <AccountantHome />
+        }></Route>
         <Route path='/purchase' element={
           <PurchaseExtras />
         }></Route>
