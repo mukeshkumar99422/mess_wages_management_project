@@ -1,0 +1,163 @@
+.accountant-home-container {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+.accountant-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.accountant-header h1 {
+  color: #15803d;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.accountant-header p {
+  color: #475569;
+  font-size: 1rem;
+}
+
+.acc-logout-btn {
+  position: fixed;
+  top: 15px;
+  right: 25px;
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  z-index: 1000; /* stays above other elements */
+}
+
+.acc-logout-btn:hover {
+  background: #b91c1c;
+}
+
+
+.selectors {
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectors label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.selectors input,
+.selectors select {
+  padding: 8px 10px;
+  border: 2px solid #16a34a;
+  border-radius: 8px;
+  background: #f0fdf4;
+  font-weight: 500;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.selectors input:focus,
+.selectors select:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 5px #22c55e70;
+}
+
+.accountant-form {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.menu-card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(22, 163, 74, 0.1);
+}
+
+.menu-card h2 {
+  color: #166534;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.item-row input {
+  flex: 1;
+  padding: 8px;
+  border: 2px solid #16a34a;
+  border-radius: 8px;
+  background: #f0fdf4;
+}
+
+.remove-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.remove-btn:hover {
+  background: #b91c1c;
+}
+
+.add-btn {
+  margin-top: 10px;
+  background: #16a34a;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.add-btn:hover {
+  background: #15803d;
+}
+
+.submit-btn {
+  align-self: center;
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #16a34a;
+}
